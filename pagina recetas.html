@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alimentos peligrosos para tu perro y gato — Guía gratuita</title>
+<meta name="description" content="Lista gratuita: los 10 alimentos que pueden matar a tu perro o gato y que probablemente tienes en casa ahora mismo.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --negro: #1A1A18;
+    --blanco: #FFFFFF;
+    --gris-claro: #F4F2EB;
+    --gris-medio: #8A8880;
+    --gris-borde: #E0DDD4;
+    --verde: #0F7A5A;
+    --verde-claro: #E1F5EE;
+    --verde-texto: #085041;
+    --rojo: #C8392B;
+    --rojo-claro: #FBEAE8;
+    --rojo-texto: #8B2419;
+    --azul: #1A5FA8;
+    --azul-claro: #E6F1FB;
+    --azul-texto: #0C3D7A;
+    --morado: #4A3BAA;
+    --morado-claro: #EEEDFE;
+    --morado-texto: #2D2475;
+    --amarillo: #E8A020;
+    --amarillo-claro: #FDF3E0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--gris-claro);
+    color: var(--negro);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--blanco);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--negro);
+    padding: 36px 24px 28px;
+    text-align: center;
+  }
+
+  .hero-alerta {
+    display: inline-block;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--blanco);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: #F5C4B3;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    color: #9A9890;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .btn-hero {
+    display: block;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .btn-hero:hover { background: #A8301F; }
+
+  /* ── SECCIÓN LISTA ── */
+  .lista-section { padding: 28px 24px; }
+
+  .lista-section > h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icono-alerta {
+    width: 20px;
+    height: 20px;
+    background: var(--rojo-claro);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .animal-bloque { margin-bottom: 24px; }
+  .animal-bloque:last-child { margin-bottom: 0; }
+
+  .animal-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  .label-perro { background: var(--azul-claro); color: var(--azul-texto); }
+  .label-gato  { background: var(--morado-claro); color: var(--morado-texto); }
+
+  .alimento-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gris-borde);
+  }
+
+  .alimento-item:last-child { border-bottom: none; }
+
+  .num-perro {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul-texto);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .num-gato {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--morado-claro);
+    color: var(--morado-texto);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .alimento-nombre {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 2px;
+  }
+
+  .alimento-desc {
+    font-size: 12px;
+    color: var(--gris-medio);
+    line-height: 1.4;
+  }
+
+  .separador-animales {
+    height: 1px;
+    background: var(--gris-borde);
+    margin: 20px 0;
+  }
+
+  /* ── TRANSICIÓN ── */
+  .transicion {
+    background: var(--gris-claro);
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid var(--gris-borde);
+    border-bottom: 1px solid var(--gris-borde);
+  }
+
+  .transicion h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .transicion p {
+    font-size: 13px;
+    color: #5A5855;
+    line-height: 1.6;
+  }
+
+  /* ── PRODUCTO ── */
+  .producto { padding: 28px 24px; }
+
+  .producto-badge {
+    display: inline-block;
+    background: var(--verde-claro);
+    color: var(--verde-texto);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+
+  .producto h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    line-height: 1.3;
+    margin-bottom: 18px;
+  }
+
+  .bullet-lista { list-style: none; margin-bottom: 20px; }
+
+  .bullet-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--negro);
+    line-height: 1.4;
+    border-bottom: 1px solid var(--gris-borde);
+  }
+
+  .bullet-lista li:last-child { border-bottom: none; }
+
+  .check {
+    color: var(--verde);
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .precio-bloque {
+    background: var(--gris-claro);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .precio-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .precio-antes {
+    font-size: 14px;
+    color: var(--gris-medio);
+    text-decoration: line-through;
+  }
+
+  .precio-ahora {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--verde);
+  }
+
+  .precio-descuento {
+    background: var(--verde-claro);
+    color: var(--verde-texto);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  .garantia-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #5A5855;
+  }
+
+  .garantia-icono { font-size: 16px; }
+
+  .btn-principal {
+    display: block;
+    background: var(--verde);
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 8px;
+    transition: background 0.15s;
+  }
+
+  .btn-principal:hover { background: #0A5C44; }
+
+  .btn-sub {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gris-medio);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--gris-claro);
+    border-top: 1px solid var(--gris-borde);
+    padding: 16px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 10px;
+    color: var(--gris-medio);
+    line-height: 1.5;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 19px; }
+    .producto h2 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-alerta">⚠ Alerta para dueños de mascotas</span>
+    <h1>Los alimentos que pueden matar a tu <em>perro o gato</em> — y que probablemente tienes en casa ahora mismo</h1>
+    <p class="hero-sub">Lista gratuita basada en nutrición canina y felina real. Sin tecnicismos, sin rodeos.</p>
+    <a href="#lista" class="btn-hero">Ver la lista ahora</a>
+  </section>
+
+  <!-- LISTA -->
+  <section class="lista-section" id="lista">
+    <h2><span class="icono-alerta">🚫</span> Alimentos prohibidos</h2>
+
+    <!-- PERROS -->
+    <div class="animal-bloque">
+      <span class="animal-label label-perro">🐶 Para perros</span>
+
+      <div class="alimento-item">
+        <div class="num-perro">1</div>
+        <div>
+          <div class="alimento-nombre">Xilitol</div>
+          <div class="alimento-desc">En chicles, pasta de dientes y mantequilla de cacahuete. Causa coma en minutos.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-perro">2</div>
+        <div>
+          <div class="alimento-nombre">Uvas y pasas</div>
+          <div class="alimento-desc">Insuficiencia renal aguda. Sin dosis segura — ni una sola uva.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-perro">3</div>
+        <div>
+          <div class="alimento-nombre">Cebolla y ajo</div>
+          <div class="alimento-desc">El daño es acumulativo. Pequeñas dosis repetidas también destruyen glóbulos rojos.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-perro">4</div>
+        <div>
+          <div class="alimento-nombre">Huesos cocinados</div>
+          <div class="alimento-desc">Se astillan y perforan intestinos. El hueso cocido es más peligroso que el crudo.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-perro">5</div>
+        <div>
+          <div class="alimento-nombre">Aguacate</div>
+          <div class="alimento-desc">La persina que contiene causa vómitos, diarrea y daño cardíaco.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="separador-animales"></div>
+
+    <!-- GATOS -->
+    <div class="animal-bloque">
+      <span class="animal-label label-gato">🐱 Para gatos</span>
+
+      <div class="alimento-item">
+        <div class="num-gato">1</div>
+        <div>
+          <div class="alimento-nombre">Atún en conserva frecuente</div>
+          <div class="alimento-desc">Genera adicción y déficit de taurina. Con el tiempo causa daño neurológico.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-gato">2</div>
+        <div>
+          <div class="alimento-nombre">Lirios y otras plantas</div>
+          <div class="alimento-desc">El lirio es letal — hasta el agua del jarrón puede matarlos.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-gato">3</div>
+        <div>
+          <div class="alimento-nombre">Hígado en exceso</div>
+          <div class="alimento-desc">Acumula vitamina A hasta niveles tóxicos. Daña huesos y columna vertebral.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-gato">4</div>
+        <div>
+          <div class="alimento-nombre">Medicamentos humanos</div>
+          <div class="alimento-desc">El paracetamol puede matarlos con una sola pastilla.</div>
+        </div>
+      </div>
+
+      <div class="alimento-item">
+        <div class="num-gato">5</div>
+        <div>
+          <div class="alimento-nombre">Comida de perro como dieta habitual</div>
+          <div class="alimento-desc">No tiene taurina suficiente. A largo plazo causa ceguera y problemas cardíacos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSICIÓN -->
+  <div class="transicion">
+    <h2>Ahora que sabes lo que NO darles... ¿sabes qué SÍ pueden comer?</h2>
+    <p>La mayoría sigue usando pienso industrial lleno de conservantes y colorantes. Hay una alternativa real para perros y gatos: alimentación natural casera. Fácil, económica y con ingredientes que puedes pronunciar.</p>
+  </div>
+
+  <!-- PRODUCTO -->
+  <section class="producto" id="producto">
+    <span class="producto-badge">Guía completa para perros y gatos</span>
+    <h2>Mega Pack: +450 recetas naturales para perros y gatos</h2>
+
+    <ul class="bullet-lista">
+      <li><span class="check">✓</span> Recetas separadas para perros y gatos — por etapa de vida</li>
+      <li><span class="check">✓</span> Dietas para alergias, sobrepeso, diabetes y problemas renales</li>
+      <li><span class="check">✓</span> Ingredientes de cualquier supermercado. Listo en 15 minutos</li>
+      <li><span class="check">✓</span> 18 bonos — snacks, primeros auxilios, calculadora de raciones</li>
+      <li><span class="check">✓</span> Acceso de por vida + actualizaciones</li>
+    </ul>
+
+    <div class="precio-bloque">
+      <div class="precio-row">
+        <span class="precio-antes">$49,99</span>
+        <span class="precio-ahora">$24,99</span>
+        <span class="precio-descuento">−50%</span>
+      </div>
+      <div class="garantia-row">
+        <span class="garantia-icono">🛡</span>
+        <span>Garantía de devolución de 7 días sin preguntas</span>
+      </div>
+    </div>
+
+    <a href="https://go.hotmart.com/T106074805T" class="btn-principal" target="_blank" rel="noopener">
+      🐾 Quiero las 450 recetas para mi mascota
+    </a>
+    <p class="btn-sub">Acceso inmediato · Hotmart · 100% seguro</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Este sitio contiene enlaces de afiliado. Si realizas una compra a través de este enlace, podría recibir una comisión sin coste adicional para ti.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
